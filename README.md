@@ -23,7 +23,7 @@ All endpoints use URL versioning: **`/api/v1/...`**
 | CRUD | `/api/v1/projects` |
 | Tasks | `/api/v1/projects/{projectId}/tasks` |
 
-Swagger shows a **v1** document in Development.
+Swagger UI is available in Development mode.
 
 ## Exception handling
 
@@ -34,10 +34,8 @@ Swagger shows a **v1** document in Development.
 
 1. Install [.NET 9 SDK](https://dotnet.microsoft.com/download).
 2. Set `ConnectionStrings:DefaultConnection` in `api/appsettings.json`.
-3. Create and apply migrations (removes `UserId` from `Projects` if you had an older schema):
 
 ```powershell
-dotnet ef migrations add RemoveUserFromProject --project infrastructure/ProjectTaskManagement.Infrastructure.csproj --startup-project api/ProjectTaskManagement.Api.csproj --output-dir Persistence/Migrations
 dotnet ef database update --project infrastructure/ProjectTaskManagement.Infrastructure.csproj --startup-project api/ProjectTaskManagement.Api.csproj
 ```
 
